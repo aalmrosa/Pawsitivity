@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<a th:href="@{/login}">login</a>
+<a th:href="@{/}">home</a>
+
+<h1>Register</h1>
+<form method="post" role="form" th:action="@{/register/save}" th:object="${registrationDto}">
+    <div>
+        <label for="username">Username: </label>
+        <input th:field="*{username}" id="username" type="text" placeholder="Enter Username" required>
+        <div th:errors="*{username}" th:if="${#fields.hasErrors('username')}"></div>
+    </div>
+    <div>
+        <label for="password">Password: </label>
+        <input th:field="*{password}" id="password" type="password" placeholder="Enter Password" required>
+        <div th:errors="*{password}" th:if="${#fields.hasErrors('password')}"></div>
+    </div>
+    <div>
+        <label for="confirm-password">Confirm Password: </label>
+        <input th:field="*{confirmPassword}" id="confirm-password" type="password" placeholder="Enter Password Again" required>
+        <div th:errors="*{confirmPassword}" th:if="${#fields.hasErrors('confirmPassword')}"></div>
+    </div>
+    <input type="submit">
+    <div th:if="${#fields.hasErrors('*')}">Passwords Do Not Match</div>
+</form>
+
+<div th:if="${param.success}">Successfully Registered!</div>
+
+</body>
+</html>
