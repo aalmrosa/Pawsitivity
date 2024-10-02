@@ -1,0 +1,37 @@
+.post-image {
+    width: 700px;
+}
+
+.post-details {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.poster-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.prof-pic-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+}
+
+.prof-pic {
+    width: 100%;
+    /*width: auto;*/
+    display: block;
+    max-width: none;
+    object-fit: cover;
+}
+
+.img-container {
+    padding: 1rem 0;
+}
+
