@@ -1,5 +1,12 @@
+#post-container {
+    margin-bottom: 1rem;
+    background-color: #D9D9D9;
+    padding: 1.6rem;
+    border-radius: 10px;
+}
+
 .post-image {
-    width: 700px;
+    max-width: 500px;
 }
 
 .post-details {

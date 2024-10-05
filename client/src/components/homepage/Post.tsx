@@ -28,7 +28,11 @@ const Post: React.FC<Props> = () => {
                          alt="cat picture"/>
                 </div>
                 <div>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at autem deserunt error excepturi iusto, molestiae neque nobis numquam odio placeat qui quos recusandae reiciendis sapiente sed sequi sunt voluptates. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, aliquam atque, consectetur debitis eligendi illum incidunt labore, mollitia necessitatibus nisi optio perspiciatis quod rerum sed sunt unde voluptate. Deserunt, illum!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at autem deserunt
+                    error excepturi iusto, molestiae neque nobis numquam odio placeat qui quos recusandae
+                    reiciendis sapiente sed sequi sunt voluptates. Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Ab, aliquam atque, consectetur debitis eligendi illum incidunt labore, mollitia
+                    necessitatibus nisi optio perspiciatis quod rerum sed sunt unde voluptate. Deserunt, illum!
                 </div>
 
             </div>
