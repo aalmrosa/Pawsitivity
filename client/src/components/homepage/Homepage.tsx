@@ -9,11 +9,10 @@ const Homepage: React.FC<Props> = () => {
 
     return (
         <div id={styles["homepage-container"]}>
-            <div id={styles["feed-container"]}>
-                <Post/>
-                <Post/>
-            </div>
             <div id={styles["right-contents"]}>
+                <div id={styles["trending"]}>
+                    <h2>Trending Mews</h2>
+                </div>
                 <div id={styles["create-post"]}>
                     <div className={styles["prof-pic-container"]}>
                         <img className={styles["prof-pic"]}
@@ -24,9 +23,10 @@ const Homepage: React.FC<Props> = () => {
                     <textarea id={styles["post-text"]}
                               placeholder={"What are your pet peeves regarding humans? Do share!"}></textarea>
                 </div>
-                <div id={styles["trending"]}>
-                    <h2>Trending Mews</h2>
-                </div>
+            </div>
+            <div id={styles["feed-container"]}>
+                <Post/>
+                <Post/>
             </div>
         </div>
     );

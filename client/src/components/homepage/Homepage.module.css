@@ -1,49 +1,6 @@
 #homepage-container {
-    display: flex;
     margin: 1.6rem auto;
     max-width: 1200px;
-    gap: 5%;
-
-}
-
-#create-post {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: #D9D9D9;
-    height: 100px;
-    /*margin-top: 1rem;*/
-    border-radius: 10px;
-}
-
-#post-text {
-    resize: none;
-    width: 90%;
-    min-height: 50px;
-    font-size: 1.8rem;
-    overflow-y: hidden;
-}
-
-#right-contents {
-    /*display: flex;*/
-    /*margin-top: 1rem;*/
-    /*gap: 5%;*/
-    width: 35%;
-}
-
-#feed-container, #trending {
-
-}
-
-#feed-container {
-    width: 60%;
-}
-
-#trending {
-    border-radius: 10px;
-    padding: 1rem 1rem;
-    background-color: #D9D9D9;
-    /*width: 45%;*/
-    margin-top: 1rem;
 }
 
 .prof-pic-container {
@@ -56,11 +13,66 @@
     align-items: center;
     border: 1px solid lightgray;
 }
+#create-post {
+     display: flex;
+     justify-content: space-around;
+    align-items: center;
+     background-color: white;
+     height: 100px;
+     border-radius: 10px;
+ }
 
-.prof-pic {
-    width: 100%;
-    /*width: auto;*/
-    display: block;
-    max-width: none;
-    object-fit: cover;
+@media (min-width: 600px) {
+    #homepage-container {
+        /*max-width: 1200px;*/
+    }
+    #post-text {
+        resize: none;
+        width: 90%;
+        min-height: 50px;
+        font-size: 1.8rem;
+        overflow-y: hidden;
+    }
+
+    #right-contents {
+        /*display: flex;*/
+        /*margin-top: 1rem;*/
+        /*gap: 5%;*/
+        width: 35%;
+    }
+
+    #feed-container, #trending {
+
+    }
+
+    #feed-container {
+        width: 60%;
+    }
+
+    #trending {
+        border-radius: 10px;
+        padding: 1rem 1rem;
+        background-color: white;
+        /*width: 45%;*/
+        margin-top: 1rem;
+    }
+
+    .prof-pic-container {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid lightgray;
+    }
+
+    .prof-pic {
+        width: 100%;
+        /*width: auto;*/
+        display: block;
+        max-width: none;
+        object-fit: cover;
+    }
 }
