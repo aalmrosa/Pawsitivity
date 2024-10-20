@@ -15,15 +15,18 @@ const Navbar: React.FC<Props> = () => {
 
     return (
         <div className={styles['nav-container']}>
-            <div><img id={styles['logo']} src={logo} alt='pawsitivity logo'/></div>
+            <div id={styles['nav-left']}>
+                <div><img id={styles['logo']} src={logo} alt='pawsitivity logo'/></div>
+                <input placeholder={'Search'} id={styles['search-bar']}/>
+            </div>
             <div className={styles['nav-items']}>
                 <i className={`material-icons-outlined ${styles['nav-item']}`}>home</i>
                 <i className={`material-icons-outlined ${styles['nav-item']}`}>person</i>
-                <i className={`material-icons-outlined ${styles['nav-item']}`}>more_vert</i>
+                <i className={`material-icons-outlined ${styles['nav-item']}`}>notifications</i>
+                <i className={`material-icons-outlined ${styles['nav-item']}`}>settings</i>
                 <i className={`material-icons-outlined ${styles['nav-item']} ${styles['closed']}`} onClick={toggleMenu}>
                     {icon}
                 </i>
-
             </div>
         </div>
 
