@@ -15,10 +15,8 @@ const Navbar: React.FC<Props> = () => {
 
     return (
         <div className={styles['nav-container']}>
-            <div id={styles['nav-left']}>
-                <div><img id={styles['logo']} src={logo} alt='pawsitivity logo'/></div>
-                <input placeholder={'Search'} id={styles['search-bar']}/>
-            </div>
+            <div id={styles['logo-container']}><img id={styles['logo']} src={logo} alt='pawsitivity logo'/></div>
+            <input placeholder={'Search'} id={styles['search-bar']}/>
             <div className={styles['nav-items']}>
                 <i className={`material-icons-outlined ${styles['nav-item']}`}>home</i>
                 <i className={`material-icons-outlined ${styles['nav-item']}`}>person</i>

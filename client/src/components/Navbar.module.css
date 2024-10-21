@@ -10,18 +10,13 @@
     box-shadow: 0 2px 8px rgba(20, 20, 20, 0.2);
 }
 
-#nav-left {
-    display: flex;
-    gap: 1rem;
-}
-
 #logo {
     height: 1.6rem;
     cursor: pointer;
 }
 
 #search-bar {
-    padding: 0 1rem;
+    padding: .2rem 1rem;
     border-radius: 5px;
     /*border: 1px solid gray;*/
 }
@@ -42,6 +37,16 @@
 }
 
 @media (min-width: 600px){
+    .nav-container {
+        justify-content: flex-start;
+    }
+    .nav-items {
+        margin-left: auto;
+    }
+    #search-bar {
+        margin-left: 1.4rem;
+        padding: .4rem 1rem;
+    }
     .nav-item:nth-child(-n+4){
         display: block;
     }
