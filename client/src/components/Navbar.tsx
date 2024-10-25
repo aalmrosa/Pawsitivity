@@ -19,25 +19,24 @@ const Navbar: React.FC<Props> = () => {
 
             <div id={styles['search-container']}>
                 <input placeholder={'Search'} id={styles['search-bar']}/>
-                <i id={styles['search-icon']} className={'material-icons-outlined'}>search</i>
+                <i id={styles['search-icon']} className={'material-symbols-outlined'}>search</i>
             </div>
-
 
             <ul className={`${styles['nav-items']} ${icon === "menu_open" ? styles.active : ""}`}>
                 <li className={styles['nav-item']}>
-                    <i className={'material-icons-outlined'}>home</i>
+                    <i className={'material-symbols-outlined'}>home</i>
                     <span>Home</span>
                 </li>
                 <li className={styles['nav-item']}>
-                    <i className={'material-icons-outlined'}>person</i>
+                    <i className={'material-symbols-outlined'}>person</i>
                     <span>Profile</span>
                 </li>
                 <li className={styles['nav-item']}>
-                    <i className={'material-icons-outlined'}>notifications</i>
+                    <i className={'material-symbols-outlined'}>notifications</i>
                     <span>Notifications</span>
                 </li>
                 <li className={styles['nav-item']}>
-                    <i className={'material-icons-outlined'}>settings</i>
+                    <i className={'material-symbols-outlined'}>settings</i>
                     <span>Settings</span>
                 </li>
 
@@ -47,7 +46,7 @@ const Navbar: React.FC<Props> = () => {
                 {/*<i className={`material-icons-outlined ${styles['nav-item']}`}>settings</i>*/}
             </ul>
 
-            <i className={`material-icons-outlined ${styles['closed']} ${styles['hamburger']}`}
+            <i className={`material-symbols-outlined ${styles['closed']} ${styles['hamburger']}`}
                onClick={toggleMenu}>
                 {icon}
             </i>

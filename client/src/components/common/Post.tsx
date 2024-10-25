@@ -8,34 +8,62 @@ const Post: React.FC<Props> = () => {
 
     return (
         <div id={styles["post-container"]}>
+            {/* picture, name, time */}
             <div className={styles["post-details"]}>
                 <div className={styles["prof-pic-container"]}>
                     <img className={styles["prof-pic"]}
                           src="https://images.unsplash.com/photo-1561948955-570b270e7c36?q=80&w=1802&a
                           uto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          alt="profile picture"/>
+                          alt="profile"/>
                 </div>
                 <div className={styles["poster-details"]}>
                     <span className={styles["poster-name"]}>Luke Meowton</span>
-                    <span className={styles["post-time"]}>9/15/2014</span>
+                    <div>
+                        <span className={styles["post-time"]}>9/15/2014</span>
+                        <span> &middot; </span>
+                        <span>11:30AM</span> 
+                    </div>
+                    
                 </div>
             </div>
+            {/* image, text */}
             <div className={styles["post-contents"]}>
                 <div className={styles["img-container"]}>
                     <img className={styles["post-image"]}
                          src="https://images.unsplash.com/photo-1511694009171-3cdddf4484ff?q=80&w=2070&a
                      uto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                         alt="cat picture"/>
+                         alt="cat"/>
                 </div>
                 <div>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at autem deserunt
-                    error excepturi iusto, molestiae neque nobis numquam odio placeat qui quos recusandae
-                    reiciendis sapiente sed sequi sunt voluptates. Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Ab, aliquam atque, consectetur debitis eligendi illum incidunt labore, mollitia
-                    necessitatibus nisi optio perspiciatis quod rerum sed sunt unde voluptate. Deserunt, illum!
+                    error excepturi iusto, molestiae neque nobis...
                 </div>
-
             </div>
+            <section id={styles.tags}>
+                <span className={styles.tag}>Cat</span>
+                <span className={styles.tag}>Nap</span>
+                <span className={styles.tag}>Catnip</span>
+                <span className={styles.tag}>Humans are annoying</span>
+                <span className={styles.tag}>Sunny day</span>
+            </section>
+            <section id={styles.interactions}>
+                <div id={styles['favorite-container']}>
+                    <i className={'material-symbols-outlined'}>favorite</i>
+                    <span>10k</span>
+                </div>
+                <div id={styles['comment-container']}>
+                    <i className={'material-symbols-outlined'}>comment</i>
+                    <span>504</span>
+                </div>
+                <div id={styles['share-container']}>
+                    <i className={'material-symbols-outlined'}>share</i>
+                    <span>43</span>
+                </div>
+            </section>
+            <hr/>
+            <section id={styles['comment-section']}>
+                <span id={styles['view-comments']}>View Comments</span>
+            </section>
         </div>
     );
 };
