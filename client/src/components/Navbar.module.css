@@ -15,37 +15,114 @@
     cursor: pointer;
 }
 
-.nav-item {
-    font-size: 1.8rem;
-    cursor: pointer;
+
+#search-container {
+    position: relative;    
 }
 
-.nav-item:nth-child(-n+3){
+#search-bar {
+    padding: .3rem 1rem;
+    border-radius: 5px;
+    /*border: 1px solid gray;*/
+}
+
+#search-icon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 85%;
+}
+
+.nav-items {
+    background-color: #d59977;
+    position: absolute;
+    top: 3rem;
+    left: 100%;
+    width: 100%;
+    align-items: center;
+    gap: 1rem;
     display: none;
 }
 
-#closed {
+.nav-items.active {
+    left: 0;
+    display: block;
+}
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul > li {
+    display: flex;
+    padding: .6rem 0;
+    justify-content: center;
+}
+
+.nav-items > li > span {
+    font-size: 1rem;
+}
+
+.nav-item {
+    /*margin: 0 auto;*/
+    font-size: 1.8rem;
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+.nav-item:nth-child(-n+4){
+    /*display: none;*/
 }
 
 @media (min-width: 600px){
-    .nav-item:nth-child(-n+3){
+    .nav-container {
+        justify-content: flex-start;
+    }
+    .nav-items > li > span {
+         display: none;
+    }
+    .nav-items {
+        margin-left: auto;
+        display: flex;
+        position: static;
+        /*width: fit-content;*/
+        width: 200px;
+        justify-content: space-between;
+        background-color: white;
+    }
+    .nav-items.active {
+        margin-left: auto;
+        display: flex;
+        position: static;
+        /*width: fit-content;*/
+        width: 200px;
+        justify-content: space-between;
+        background-color: white;
+    }
+    #search-bar {
+        margin-left: 1.4rem;
+        padding: .4rem 1rem;
+    }
+    .nav-item:nth-child(-n+4){
         display: block;
     }
-    .nav-item:nth-child(n+4){
+    .nav-item:nth-child(n+5){
         display: none;
     }
     #logo {
         height: 2rem;
         cursor: pointer;
     }
-
     .nav-items {
-        width: 200px;
-        display: flex;
-        justify-content: space-between;
-    }
-    .nav-item:hover {
 
+        /*align-items: center;*/
+    }
+    ul > li {
+     padding: 0;
+    }
+    .hamburger {
+        display: none;
     }
 }

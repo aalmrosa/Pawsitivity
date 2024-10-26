@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import styles from "./Homepage.module.css";
-import Post from "./Post";
+import Post from "../common/Post";
 interface Props {
 
 }
