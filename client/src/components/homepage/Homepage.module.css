@@ -1,9 +1,18 @@
-#homepage-container {
-    margin: 1.6rem auto;
-    max-width: 1200px;
+body {
+    background-color: #C3854F;
 }
 
-.prof-pic-container {
+#homepage-container{
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* #homepage-container {
+    margin: 1.6rem auto;
+    max-width: 1200px;
+} */
+
+ .prof-pic-container {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -20,7 +29,6 @@
     padding: 1.6rem;
     align-items: center;
     background-color: white;
-    /*height: 100px;*/
     border-radius: 10px;
     margin-top: 1rem;
 }
@@ -31,41 +39,42 @@
     min-height: 50px;
     font-size: 1.2rem;
     border-radius: 10px;
-    /*overflow-y: hidden;*/
 }
-
+/*
 #trending {
     border-radius: 10px;
     padding: 0 1rem;
     background-color: white;
-    /*width: 45%;*/
     margin-top: 1rem;
-}
+} */
 
 @media (min-width: 600px) {
-    #homepage-container {
-        /*max-width: 1200px;*/
+
+    #homepage-container{
+        max-width: 95%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #side-profile-container {
+        width: 20%;
+    }
+    
+    #feed-container {
+        width: 50%;
+    }
+    
+    #right-container {
+        width: 20%;
     }
 
-
-
-    #right-contents {
-        /*display: flex;*/
-        /*margin-top: 1rem;*/
-        /*gap: 5%;*/
+    /* #right-contents {
         width: 35%;
     }
-
-    #feed-container, #trending {
-
-    }
-
     #feed-container {
         width: 60%;
     }
-
-
-
     .prof-pic-container {
         width: 40px;
         height: 40px;
@@ -76,12 +85,10 @@
         align-items: center;
         border: 1px solid lightgray;
     }
-
     .prof-pic {
         width: 100%;
-        /*width: auto;*/
         display: block;
         max-width: none;
         object-fit: cover;
-    }
+    } */
 }

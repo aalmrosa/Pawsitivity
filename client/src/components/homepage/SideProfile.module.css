@@ -1,0 +1,111 @@
+#side-profile-container {
+    padding: 0.5rem;
+    /* border: 1px solid black; */
+    background-color: lightgray;
+    border-radius: 15px;
+}
+
+#side-prof-inner {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.prof-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.main-pic-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+}
+
+.main-pic {
+    width: 80px;
+    height: 80px;
+}
+
+.prof-pic-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+}
+
+.prof-pic {
+    width: 40px;
+    height: 40px;
+}
+
+#name-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-buttons > button {
+    border: none;
+    background-color: #8F643F;
+    padding: 0.4rem;
+    border-radius: 5px;
+    width: 90px;
+    color: white;
+}
+
+.profile-buttons > button:first-child {
+    margin-right: 1rem;
+}
+
+.about-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-container > .about-info-list{
+    list-style-type: none;
+}
+
+.friends-container, .followers-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pic-text-container {
+    display: flex;
+    align-items: flex-end;
+    /* gap: 1rem; */
+}
+
+.pic-list-container {
+    display: flex;
+    position: relative;
+    margin-right: 40px;
+}
+
+.prof-pic-container:nth-child(2){
+    position: absolute;
+    left: 20px;
+}
+
+.prof-pic-container:nth-child(3){
+    position: absolute;
+    left: 40px;
+}
+
