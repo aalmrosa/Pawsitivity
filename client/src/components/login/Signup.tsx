@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import styles from "./Login.module.css"
 
 interface Props {
 
@@ -34,19 +35,26 @@ const Signup: React.FC<Props> = () => {
 
 
     return (
-        <div>
+        <div id={styles["container"]}>
+            <header>
+                <div id={styles["header-1"]}>Sign-up To</div>
+                <div id={styles["header-2"]}>Pawsitivity</div>
+            </header>
             <form method="post" onSubmit={handleSignup}>
-                <label htmlFor="username">Username: </label>
-                <input id="username" type="text" placeholder="Enter your username" onChange={(e) => setUsername(e.target.value)}/>
+                <label htmlFor="username"></label>
+                <input id="username" className={styles["text-input"]} type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)}/>
 
-                <label htmlFor="password">Password: </label>
-                <input id="password" type="password" placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)}/>
+                <label htmlFor="password"></label>
+                <input id="password" className={styles["text-input"]} type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
 
-                <label htmlFor="confirmPassword">Confirm Password: </label>
-                <input id="confirmPassword" type="password" placeholder="Please confirm your password" onChange={(e) => setConfirmPassword(e.target.value)}/>
+                <label htmlFor="confirmPassword"></label>
+                <input id="confirmPassword" className={styles["text-input"]} type="password" placeholder="Confirm Password" onChange={(e) => setConfirmPassword(e.target.value)}/>
 
-                <input type="submit" value="Submit"/>
+                <input id={styles["submit-form"]} type="submit" value="Sign-up"/>
             </form>
+            <div className={styles["links"]}>
+                <div>Already have an account?</div>
+            </div>
         </div>
     );
 };

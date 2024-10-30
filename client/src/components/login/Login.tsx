@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import Navbar from "../Navbar";
+import styles from "./Login.module.css"
 
 interface Props {
 
@@ -32,19 +32,27 @@ const Login: React.FC<Props> = () => {
     }
 
     return (
-        <div>
-            {/*<i className="icon ion-md-home"></i>*/}
+        <div id={styles["container"]}>
+            <header>
+                <div id={styles["header-1"]}>Login To</div>
+                <div id={styles["header-2"]}>Pawsitivity</div>
+            </header>
             <form method="post" onSubmit={handleLogin}>
-                <label htmlFor="username">Username: </label>
-                <input id="username" type="text" placeholder="Enter your username"
-                       onChange={(e) => setUsername(e.target.value)}/>
+                <div className={styles["user-info"]}>
+                    <label htmlFor="username"></label>
+                    <input id="username" className={styles["text-input"]} type="text" placeholder="username"
+                            onChange={(e) => setUsername(e.target.value)}/>
 
-                <label htmlFor="password">Password: </label>
-                <input id="password" type="password" placeholder="Enter your password"
-                       onChange={(e) => setPassword(e.target.value)}/>
-
-                <input type="submit" value="Submit"/>
+                    <label htmlFor="password"></label>
+                    <input id="password" className={styles["text-input"]} type="password" placeholder="password"
+                            onChange={(e) => setPassword(e.target.value)}/>
+                </div>
+                <input id={styles["submit-form"]} type="submit" value="Login"/>
             </form>
+            <div className={styles["links"]}>
+                <div>Forgot your password?</div>
+                <div>Don't have an account?</div>
+            </div>
         </div>
     );
 };

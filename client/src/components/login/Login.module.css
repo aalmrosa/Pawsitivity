@@ -1,0 +1,90 @@
+body {
+    background-color: #C3854F;
+    width: 100vw;
+    height: 100vh;
+}
+
+@font-face {
+    font-family: 'Kablammo';
+    src: url('../../Kablammo/Kablammo-Regular-VariableFont_MORF.ttf');
+}
+
+/* prototyping
+#container, header, form, #submit-form, .links > a {
+    outline: 1px solid black;
+} */
+
+/* mobile */
+#container {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10% 15% 0 15%;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#header-1 {
+    font-size: 2rem;
+    color: white;
+    text-shadow: 0 5px 5px rgb(0, 0, 0, 0.25);
+    -webkit-text-stroke: 1px black;
+}
+#header-2 {
+    font-size: 2.5rem;
+    color: white;
+    -webkit-text-stroke: 0.8px black;
+    font-family: 'Kablammo';
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+.text-input {
+    display: block;
+    background-color: #C3854F;
+    border: 1px solid white;
+    width: 100%;
+    margin: 0 0 20px 0;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 5px rgb(0, 0, 0, 0.25);
+}
+::placeholder {
+    color: white;
+    padding: 8px;
+    text-transform: uppercase;
+    text-shadow: 0 5px 5px rgb(0, 0, 0, 0.25);
+}
+#submit-form {
+    justify-self: flex-end;
+    align-self: flex-end;
+    background-color: #8F643F;
+    padding: 5px 35px 5px 35px;
+    margin: 30px 0 100px 0;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.5rem;
+    border: 0;
+}
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.links > * {
+    padding-top: 5px;
+    text-decoration: underline;
+    font-style: oblique;
+}
+
+@media (min-device-width: 1024px) {
+    #container {
+        margin: 5% 30vw 0 30vw;
+        height: 60vh;
+    } 
+}
