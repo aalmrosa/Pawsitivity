@@ -1,94 +1,78 @@
 body {
     background-color: #C3854F;
 }
-
-#homepage-container{
-    max-width: 80%;
-    margin: 0 auto;
+/* main */
+.container{
+    display: flex;
+    flex-direction: column;
 }
-
-/* #homepage-container {
-    margin: 1.6rem auto;
-    max-width: 1200px;
-} */
-
- .prof-pic-container {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
+.sticky-panels {
+    display: none;
+}
+/* create post */
+.feed-container, .feed-posts-container > * {
+    margin-top: 2vh;
+}
+.create-post {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2vh 1.5vh;
+    background-color: white;
+    border-radius: 10px;
+}
+.prof-pic-container {
+    aspect-ratio: 1;
+    height: 6vh;
+    margin-right: 2vh;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
     border: 1px solid lightgray;
 }
-
-#create-post {
-    display: flex;
-    justify-content: space-between;
-    padding: 1.6rem;
-    align-items: center;
-    background-color: white;
-    border-radius: 10px;
-    margin-top: 1rem;
+.prof-pic {
+    aspect-ratio: 1;
+    height: 100%;
 }
-
-#post-text {
+.new-post-text {
     resize: none;
+    min-height: 6vh;
+    vertical-align: middle;
     width: 80%;
-    min-height: 50px;
-    font-size: 1.2rem;
+    padding: 0 0.5vh;
+    font-size: 1.15rem;
     border-radius: 10px;
 }
-/*
-#trending {
-    border-radius: 10px;
-    padding: 0 1rem;
-    background-color: white;
-    margin-top: 1rem;
-} */
 
-@media (min-width: 600px) {
-
-    #homepage-container{
-        max-width: 95%;
-        margin: 0 auto;
+@media (min-width: 1024px) {
+    .feed-container {
+        margin: 0;
+    }
+    .container{
+        margin: 2.5%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .sticky-panels {
+        position: sticky;
+        height: 86.2vh;
+        width: 100%;
         display: flex;
         justify-content: space-between;
     }
-    
-    #side-profile-container {
+    .sticky-panels > * {
         width: 20%;
     }
-    
-    #feed-container {
+    .feed-container {
+        position: absolute;
+        left: 25%;
+        padding: 2.5%;
         width: 50%;
+        background-color: lightgray;
+        border-radius: 15px;
     }
-    
-    #right-container {
-        width: 20%;
+    .feed-container > * {
+        box-shadow: 0 5px 8px rgba(20,20,20,0.2);
     }
-
-    /* #right-contents {
-        width: 35%;
-    }
-    #feed-container {
-        width: 60%;
-    }
-    .prof-pic-container {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid lightgray;
-    }
-    .prof-pic {
-        width: 100%;
-        display: block;
-        max-width: none;
-        object-fit: cover;
-    } */
 }
