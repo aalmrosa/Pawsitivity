@@ -67,12 +67,16 @@ hr {
     list-style-type: none;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 12px;
 }
 
 .profile-selections > li {
-    background-color: lightgray;
     padding: 2px 8px;
     border-radius: 5px;
+}
+
+.profile-selections > li.active {
+    background-color: lightgray;
 }
 
 .profile-info {

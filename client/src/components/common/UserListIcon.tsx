@@ -7,7 +7,7 @@ interface Props {
 const UserListIcon: React.FC<Props> = () => {
 
     return (
-        <div className={styles['friends-container']}>
+        <div className={styles['people-container']}>
             <h3>Friends</h3>
             <div className={styles["pic-text-container"]}>
                 <div className={styles["pic-list-container"]}>

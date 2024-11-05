@@ -1,5 +1,5 @@
 .profile-container {
-    position: relative;;
+    position: relative;
 }
 
 .profile-banner-container{
@@ -26,6 +26,49 @@
 .post-history-container {
     text-align: center;
     background-color: #C3854F;
-    padding: 0 18px;
+    padding: 10px 18px;
 }
 
+@media (min-width: 1024px) {
+    #profile-container {
+        padding: 24px 20px;
+        background-color: #C3854F;
+    }
+    
+    .profile-banner-container{
+        width: 100%;
+        height: 225px;
+        box-shadow: 0 2px 8px rgba(20, 20, 20, 0.4);
+    }
+    
+    .banner-pic {
+        width: 100%;
+        height: 225px;
+        object-fit: cover;
+    }
+
+    .banner-gradient {
+        display: none;
+    }
+
+    .prof-card-mobile-container {
+        display: none;
+    }
+
+    .desktop-main-container {
+        display: flex;
+        gap: 2%;
+        margin-top: 20px;
+    }
+
+    .prof-card-desktop-container {
+        width: 29%;
+    }
+
+    .post-history-container {
+        background-color: lightgray;
+        width: 69%;
+        padding: 20px 80px;
+        box-shadow: 0 2px 8px rgba(20, 20, 20, 0.4);
+    }
+}

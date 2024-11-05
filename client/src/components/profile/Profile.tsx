@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styles from "./Profile.module.css";
 import ProfileCardMobile from "./ProfileCardMobile";
 import Post from "../common/Post";
+import SideProfile from "../common/SideProfile";
 interface Props {
 
 }
@@ -18,10 +19,16 @@ const Profile: React.FC<Props> = () => {
             <section className={styles['prof-card-mobile-container']}>
                 <ProfileCardMobile/>
             </section>
-            <section className={styles['post-history-container']}>
-                <h2>Post History</h2>
-                <Post/>
-            </section>
+            <div className={styles['desktop-main-container']}>
+                <section className={styles['prof-card-desktop-container']}>
+                    <SideProfile/>
+                </section>
+                <section className={styles['post-history-container']}>
+                    <h2>Post History</h2>
+                    <Post/>
+                </section>
+            </div>
+            
         </div>
     );
 };

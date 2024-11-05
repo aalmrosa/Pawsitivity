@@ -31,9 +31,12 @@ const ProfileCardMobile: React.FC<Props> = () => {
             <hr/>
             <section className={styles['profile-info-container']}>
                 <ul className={styles['profile-selections']}>
-                    <li onClick={() => {setSelection("About")}}>About</li>
-                    <li onClick={() => {setSelection("Friends")}}>Friends</li>
-                    <li onClick={() => {setSelection("Followers")}}>Followers</li>
+                    <li onClick={() => {setSelection("About")}} 
+                        className={(selection === "About") ? `${styles['active']}` : "" }>About</li>
+                    <li onClick={() => {setSelection("Friends")}} 
+                        className={(selection === "Friends") ? `${styles['active']}` : "" }>Friends</li>
+                    <li onClick={() => {setSelection("Followers")}}
+                        className={(selection === "Followers") ? `${styles['active']}` : "" }>Followers</li>
                 </ul>
                 {selection === "About" && 
                     <div>
