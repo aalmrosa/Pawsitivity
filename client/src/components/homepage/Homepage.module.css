@@ -1,78 +1,92 @@
 body {
     background-color: #C3854F;
 }
-/* main */
-.container{
-    display: flex;
-    flex-direction: column;
-}
-.sticky-panels {
+.sticky {
     display: none;
 }
-/* create post */
-.feed-container, .feed-posts-container > * {
-    margin-top: 2vh;
+.container {
+    margin: 15px;
+}
+.feed-container > *, .feed-posts-container > * {
+    margin-top: 15px;
 }
 .create-post {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2vh 1.5vh;
+    box-shadow: 0 5px 8px rgba(20,20,20,0.2);
     background-color: white;
     border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
 }
 .prof-pic-container {
     aspect-ratio: 1;
-    height: 6vh;
-    margin-right: 2vh;
+    max-height: 50px;
+    margin-right: 10px;
     border-radius: 50%;
     overflow: hidden;
-    display: flex;
-    border: 1px solid lightgray;
 }
 .prof-pic {
     aspect-ratio: 1;
     height: 100%;
 }
 .new-post-text {
-    resize: none;
-    min-height: 6vh;
-    vertical-align: middle;
-    width: 80%;
-    padding: 0 0.5vh;
+    width: 100%;
     font-size: 1.15rem;
     border-radius: 10px;
+    padding: 0 5px;
 }
-
 @media (min-width: 1024px) {
-    .feed-container {
-        margin: 0;
+    .info-mbl-only {
+        display: none;
     }
-    .container{
-        margin: 2.5%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .sticky-panels {
-        position: sticky;
-        height: 86.2vh;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-    .sticky-panels > * {
-        width: 20%;
-    }
-    .feed-container {
-        position: absolute;
-        left: 25%;
-        padding: 2.5%;
-        width: 50%;
-        background-color: lightgray;
-        border-radius: 15px;
+    .feed-posts-container > * {
+        margin-top: 20px;
     }
     .feed-container > * {
-        box-shadow: 0 5px 8px rgba(20,20,20,0.2);
+        margin: 0;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        max-width: 1920px;
+        margin: 0;
+        padding: 20px 0;
+    }
+    .side-profile-container {
+        min-height: 550px;
+    }
+    .sticky {
+        display: block;
+        position: sticky;
+        top: 20px;
+        width: 20%;
+        min-width: 240px;
+        max-width: 300px;
+        margin: 0 20px;
+        height: calc(100vh - 40px);
+    }
+    .feed-container {
+        width: calc(60% - 40px);
+    }
+    .right-container > :last-child { 
+        margin-top: 20px;
+    }
+    .right-container > * {
+        height: calc(50% - 10px);
+    }
+    .load-btn {
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        font-size: 1.2rem;
+        width: 20%;
+        padding: 5px 0;
+        border-radius: 5px;
+        margin-left: 40%;
+    }
+}
+@media (min-width: 1920px) {
+    .container {
+        margin: 0 auto;
     }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import Styles from './Info.module.css'
+import Styles from './InfoPanel.module.css'
 interface Props {
 
 }

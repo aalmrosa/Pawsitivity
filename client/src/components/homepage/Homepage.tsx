@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styles from "./Homepage.module.css";
 import Post from "../common/Post";
 import SideProfile from "./SideProfile";
+import InfoWindow from "../common/InfoWindow";
 interface Props {
 
 }
@@ -10,15 +11,10 @@ const Homepage: React.FC<Props> = () => {
 
     return (
         <div className={styles["container"]}>
-            <div className={styles["sticky-panels"]}>
-                <section className={styles["side-profile-container"]}>
+            <section className={`${styles['side-profile-container']} ${styles['sticky']}`} >
                 <SideProfile/>
-                </section>
+            </section>
 
-                <section className={styles['right-container']}>
-                    <div style={{backgroundColor: "white", height: "600px", borderRadius: "15px"}}>Hello</div>
-                </section>
-            </div>
             <section className={styles["feed-container"]}>
                 <section className={styles["create-post"]}>
                     <div className={styles["prof-pic-container"]}>
@@ -29,11 +25,25 @@ const Homepage: React.FC<Props> = () => {
                     <textarea className={styles["new-post-text"]}
                         placeholder={"What are your pet peeves regarding humans? Do share!"}></textarea>
                 </section>
+                <section className={styles["info-mbl-only"]}>
+                    <InfoWindow/>
+                </section>
                 <section className={styles["feed-posts-container"]}>
                     <Post/>
                     <Post/>
+                    <Post/>
+                    <Post/>
+                    <Post/>
+                    <Post/>
+                    <Post/>
+                    <Post/>
+                    <span className={styles["load-btn"]}>Load more</span>
                 </section>
-                <span className={styles["load-btn"]}>Load more</span>
+            </section>
+            
+            <section className={`${styles['right-container']} ${styles['sticky']}`}>
+                <InfoWindow/>
+                <InfoWindow/>
             </section>
         </div>
     );
