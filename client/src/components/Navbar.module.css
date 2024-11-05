@@ -47,6 +47,7 @@
 .nav-items.active {
     left: 0;
     display: block;
+    z-index: 1;
 }
 
 .nav-items {
