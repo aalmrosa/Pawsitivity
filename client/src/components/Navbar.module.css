@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+}
+
 .nav-container{
     background-color: white;
     display: flex;
@@ -5,7 +9,6 @@
     align-items: center;
     padding: 0 2rem;
     height: 3rem;
-    /*background-color: lightgray;*/
     border-bottom: 1px solid gray;
     box-shadow: 0 2px 8px rgba(20, 20, 20, 0.2);
 }
@@ -15,7 +18,6 @@
     cursor: pointer;
 }
 
-
 #search-container {
     position: relative;    
 }
@@ -23,7 +25,6 @@
 #search-bar {
     padding: .3rem 1rem;
     border-radius: 5px;
-    /*border: 1px solid gray;*/
 }
 
 #search-icon{
@@ -42,6 +43,9 @@
     align-items: center;
     gap: 1rem;
     display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-items.active {
@@ -50,54 +54,30 @@
     z-index: 1;
 }
 
-.nav-items {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-items > .nav-item {
+.nav-items > .nav-item > a {
     display: flex;
     padding: .6rem 0;
     justify-content: center;
-}
-
-.nav-items > li > span {
-    font-size: 1rem;
-}
-
-.nav-item {
-    /*margin: 0 auto;*/
     font-size: 1.8rem;
     font-weight: lighter;
     cursor: pointer;
 }
 
-.nav-item:nth-child(-n+4){
-    /*display: none;*/
+.nav-items > li span {
+    font-size: 1rem;
 }
 
 @media (min-width: 600px){
     .nav-container {
         justify-content: flex-start;
     }
-    .nav-items > li > span {
+    .nav-items > li span {
          display: none;
     }
-    .nav-items {
+    .nav-items, .nav-items.active {
         margin-left: auto;
         display: flex;
         position: static;
-        /*width: fit-content;*/
-        width: 200px;
-        justify-content: space-between;
-        background-color: white;
-    }
-    .nav-items.active {
-        margin-left: auto;
-        display: flex;
-        position: static;
-        /*width: fit-content;*/
         width: 200px;
         justify-content: space-between;
         background-color: white;
@@ -116,12 +96,8 @@
         height: 2rem;
         cursor: pointer;
     }
-    .nav-items {
-
-        /*align-items: center;*/
-    }
     .nav-items > .nav-item {
-     padding: 0;
+        padding: 0;
     }
     .hamburger {
         display: none;

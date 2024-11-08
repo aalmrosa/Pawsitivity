@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import logo from "../pawsitivity-icon.png";
 import styles from "./Navbar.module.css";
+import { Link } from "react-router-dom";
 interface Props {
 
 }
@@ -24,20 +25,30 @@ const Navbar: React.FC<Props> = () => {
 
             <ul className={`${styles['nav-items']} ${icon === "menu_open" ? styles.active : ""}`}>
                 <li className={styles['nav-item']}>
-                    <i className={'material-symbols-outlined'}>home</i>
-                    <span>Home</span>
+                    <Link to="/">
+                        <i className={'material-symbols-outlined'}>home</i>
+                        <span>Home</span>
+                    </Link>
+                    
                 </li>
                 <li className={styles['nav-item']}>
-                    <i className={'material-symbols-outlined'}>person</i>
-                    <span>Profile</span>
+                    <Link to="/profile">
+                        <i className={'material-symbols-outlined'}>person</i>
+                        <span>Profile</span>
+                    </Link>
+                    
                 </li>
                 <li className={styles['nav-item']}>
-                    <i className={'material-symbols-outlined'}>notifications</i>
-                    <span>Notifications</span>
+                    <Link to="/">
+                        <i className={'material-symbols-outlined'}>notifications</i>
+                        <span>Notifications</span>
+                    </Link>
                 </li>
                 <li className={styles['nav-item']}>
-                    <i className={'material-symbols-outlined'}>settings</i>
-                    <span>Settings</span>
+                    <Link to="/">
+                        <i className={'material-symbols-outlined'}>settings</i>
+                        <span>Settings</span>
+                    </Link>
                 </li>
             </ul>
 

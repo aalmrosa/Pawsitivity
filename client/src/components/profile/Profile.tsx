@@ -26,6 +26,11 @@ const Profile: React.FC<Props> = () => {
                 <section className={styles['post-history-container']}>
                     <h2>Post History</h2>
                     <Post/>
+                    <Post/>
+                    <Post/>
+                    <Post/>
+                    <Post/>
+                    <Post/>
                 </section>
             </div>
             

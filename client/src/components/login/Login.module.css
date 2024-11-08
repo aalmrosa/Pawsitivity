@@ -4,10 +4,10 @@ body {
     height: 100vh;
 }
 
-@font-face {
+/* @font-face {
     font-family: 'Kablammo';
     src: url('../../Kablammo/Kablammo-Regular-VariableFont_MORF.ttf');
-}
+} */
 
 /* prototyping
 #container, header, form, #submit-form, .links > a {
