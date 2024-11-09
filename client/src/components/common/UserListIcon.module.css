@@ -1,0 +1,44 @@
+.friends-container, .followers-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prof-pic-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+}
+
+.prof-pic {
+    width: 40px;
+    height: 40px;
+}
+
+.pic-text-container {
+    display: flex;
+    align-items: flex-end;
+    /* gap: 1rem; */
+}
+
+.pic-list-container {
+    display: flex;
+    position: relative;
+    margin-right: 40px;
+}
+
+.prof-pic-container:nth-child(2){
+    position: absolute;
+    left: 20px;
+}
+
+.prof-pic-container:nth-child(3){
+    position: absolute;
+    left: 40px;
+}
+

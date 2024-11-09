@@ -39,11 +39,6 @@ const Navbar: React.FC<Props> = () => {
                     <i className={'material-symbols-outlined'}>settings</i>
                     <span>Settings</span>
                 </li>
-
-                {/*<i className={`material-icons-outlined ${styles['nav-item']}`}>home</i>*/}
-                {/*<i className={`material-icons-outlined ${styles['nav-item']}`}>person</i>*/}
-                {/*<i className={`material-icons-outlined ${styles['nav-item']}`}>notifications</i>*/}
-                {/*<i className={`material-icons-outlined ${styles['nav-item']}`}>settings</i>*/}
             </ul>
 
             <i className={`material-symbols-outlined ${styles['closed']} ${styles['hamburger']}`}
