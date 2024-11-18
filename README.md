@@ -1,28 +1,79 @@
+<div align=center> 
+
 # <picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/aalmrosa/Pawsitivity/blob/main/server/src/main/resources/pawsitivity-icon-back.png"><source media="(prefers-color-scheme: light)" srcset="https://github.com/aalmrosa/Pawsitivity/blob/main/server/src/main/resources/pawsitivity-icon-back.png"><img alt="Pawsitivity icon" src="https://github.com/aalmrosa/Pawsitivity/blob/main/server/src/main/resources/pawsitivity-icon-back.png" width="38" height="54"></picture> Pawsitivity <picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/aalmrosa/Pawsitivity/blob/main/server/src/main/resources/pawsitivity-icon.png"><source media="(prefers-color-scheme: light)" srcset="https://github.com/aalmrosa/Pawsitivity/blob/main/server/src/main/resources/pawsitivity-icon.png"><img alt="Pawsitivity icon" src="https://github.com/aalmrosa/Pawsitivity/blob/main/server/src/main/resources/pawsitivity-icon.png" width="38" height="54"></picture>
 
--add description, add tools & frameworks used-
+</div>
 
-<details>
-    <summary>List of Contents</summary>
-    <ul>
-        <li> 1. Developmental process</li>
-        <ul>
-            <li>1.1 Initial steps</li>
-            <li>1.2 Front-end</li>
-            <li>1.3 Back-end</li>
-            <li>1.4 Database</li>
-        </ul>
-        <li>Tools, Languages, and Frameworks</li>
-        <ul>
-            <li>.1 Front-end</li>
-            <li>.2 Back-end</li>
-            <li>.3 Database</li>
-            <li>.4 Software</li>
-        </ul>
-    </ul>
-</details>
+### Table of Contents
 
-<hr>
+- [About](#about)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installing](#installing)
+- [Running the tests](#running-the-tests)
+- [Deployment](#deployment)
+- [Built With](#built-with)
+  - [Languages](#languages)
+- [Documentation](#documentation)
+- [Authors](#authors)
+  - [Contacts](#contacts)
+- [Feedback & Contributions](#feedback-and-contributions)
+- [Acknowledgements](#acknowledgements)
+
+## About
+
+<p><b>Pawsitivity</b> is a social network built as a challenge to its authors, providing diverse features that served primarily for the development of a better code understandability and experience with larger projects.</p>
+
+## Getting Started
+
+These instructions will allow you to get a copy of the project running in a local environment for personal testing of final product. 
+
+### Prerequisites
+
+| What you'll need | Where to get it |
+| :--------------: | :-------------: |
+| Node.js & npm    | Node: [prebuilt installer](https://nodejs.org/en/download/prebuilt-installer)<br>npm: [step-by-step guide](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)|
+| Maven            | [step-by-step guide](https://maven.apache.org/install.html)|'
+| MySQL            | [step-by-step guide WindowsOS](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/windows-installation.html)
+
+### Installing
+
+## Running the tests
+
+## Deployment
+
+## Built With
+
+* [Maven](https://maven.apache.org) - Dependency management
+* [Spring](https://spring.io) - Used to build web server infrastructure
+* [React](https://react.dev) - Frontend framework
+* [MySQL](https://www.mysql.com) - Database
+
+#### Languages: 
+
+* [Java](https://www.java.com/en/)
+* [TypeScript](https://www.typescriptlang.org)
+* [HTML](https://en.wikipedia.org/wiki/HTML)
+* [CSS](https://en.wikipedia.org/wiki/CSS)
+
+## Documentation
+
+## Authors
+
+* <b>Augusto Rosa</b> 
+* <b>Nina Yang</b> - <em>Project idea</em> - 
+
+### Contacts
+
+## Feedback and Contributions
+
+## Acknowledgements
+
+<p>Pawsitivity's main objective was to serve as a challenge to the knowledge of its developers, being an addition to their portfolio as a display of skill.</p> 
+
+[Back to the top](#-pawsitivity-)
+
+<!-- 
 
 # 1. Developmental process 
 ### 1.1 Initial Steps
@@ -40,52 +91,4 @@
 #### Prototyping
 <p>With a well developed design of how the front-end should look, the coding process was initialized focusing only in making something that looked good in both desktop and mobile screen sizes, the functionalities of everything, like toggleable buttons and animations comes in later.</p>
 <p>In order to assist the construction of the UI, <a href="https://react.dev">React</a> was the framework of choice, allowing for a shorter development time with a more organized codebase. </p>
-
-#### Interactions
-
-####
-
-### 1.3 Back-end
-
-####
-
-### 1.4 Database
-
-####
-
-<hr> 
-
-# . Tools, Languages, and Framewoks
-
-### .1 Front-end
-<ul>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>JavaScript</li>
-    <li>React</li>
-    <li></li>
-</ul>
-
-
-### .2 Back-end
-<ul>
-    <li>Java</li>
-    <li>Spring Framework</li>
-    <li></li>
-</ul>
-
-### .3 Database
-<ul>
-    <li></li>
-</ul>
-
-### .4 Software
-<ul>
-    <li>IntelliJ Ultimate</li>
-    <li>VS Code</li>
-    <li>MySQL Workbench</li>
-    <li></li>
-</ul>
-
-### Test Project:
-Pawsitivity's main objective was to serve as a challenge to the knowledge of its developers, being an addition to their portfolio as a display of skill. 
+-->
