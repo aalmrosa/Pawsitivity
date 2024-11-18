@@ -1,8 +1,18 @@
-#post-container {
+.post-container hr {
+    margin: 0;
+    padding: 0;
+}
+.post-container {
     background-color: white;
-    padding: 1rem;
+    padding: 16px;
     border-radius: 10px;
     box-shadow: 0 5px 8px rgba(20,20,20,0.2);
+}
+
+.no-bot-radius {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-bottom: 0;
 }
 
 .prof-pic-container {
@@ -55,9 +65,13 @@
     gap: 1rem;
 }
 
-#comment-section {
+.comment-section {
     display: flex;
     justify-content: center;
+}
+
+.hide {
+    display: none;
 }
 @media (min-width: 600px){
     #post-container {

@@ -23,10 +23,18 @@
     background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.9))
 }
 
+.prof-card-desktop-container {
+    display: none;
+}
+
 .post-history-container {
-    text-align: center;
+    
     background-color: #C3854F;
     padding: 10px 18px;
+}
+
+.post-history-container > h2 {
+    text-align: center;
 }
 
 @media (min-width: 1024px) {
@@ -49,6 +57,10 @@
 
     .banner-gradient {
         display: none;
+    }
+
+    .prof-card-desktop-container {
+        display: block;
     }
 
     .prof-card-mobile-container {

@@ -1,13 +1,13 @@
 import React, {useState} from "react";
 import styles from "./Post.module.css";
 interface Props {
-
+    page?: string;
 }
 
-const Post: React.FC<Props> = () => {
+const Post = (props: Props) => {
 
     return (
-        <div id={styles["post-container"]}>
+        <div className={`${styles["post-container"]} ${(props.page === "ViewPost") ? styles["no-bot-radius"]: ""}`} >
             {/* picture, name, time */}
             <div className={styles["post-details"]}>
                 <div className={styles["prof-pic-container"]}>
@@ -61,7 +61,7 @@ const Post: React.FC<Props> = () => {
                 </div>
             </section>
             <hr/>
-            <section id={styles['comment-section']}>
+            <section className={`${styles['comment-section']} ${(props.page === "ViewPost") ? styles["hide"]: ""}`}>
                 <span id={styles['view-comments']}>View Comments</span>
             </section>
         </div>
