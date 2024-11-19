@@ -28,7 +28,6 @@ const Login: React.FC<Props> = () => {
         } catch (error){
             console.log("remove error", error);
         }
-
     }
 
     return (

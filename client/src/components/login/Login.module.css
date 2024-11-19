@@ -9,11 +9,6 @@ body {
     src: url('../../Kablammo/Kablammo-Regular-VariableFont_MORF.ttf');
 } */
 
-/* prototyping
-#container, header, form, #submit-form, .links > a {
-    outline: 1px solid black;
-} */
-
 /* mobile */
 #container {
     height: 80vh;
@@ -48,15 +43,15 @@ form {
     display: block;
     background-color: #C3854F;
     border: 1px solid white;
+    color: white;
     width: 100%;
     margin: 0 0 20px 0;
-    padding: 10px 0;
+    padding: 10px 8px;
     font-size: 1.2rem;
     box-shadow: 0 5px 5px rgb(0, 0, 0, 0.25);
 }
 ::placeholder {
     color: white;
-    padding: 8px;
     text-transform: uppercase;
     text-shadow: 0 5px 5px rgb(0, 0, 0, 0.25);
 }
