@@ -66,6 +66,12 @@ form {
     font-size: 1.5rem;
     border: 0;
 }
+#submit-form:hover {
+    cursor: pointer;
+}
+#submit-form:active {
+    outline: 1px solid gray;
+}
 .links {
     display: flex;
     flex-direction: column;
@@ -79,7 +85,20 @@ form {
 .links > *:visited {
     color: black;
 }
-
+.prefix {
+    color: red;
+}
+.msg {
+    padding: 0 0 0 8px;
+}
+#form-errors {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 8px;
+    border-radius: 5px;
+}
 @media (min-device-width: 1024px) {
     #container {
         margin: 5% 30vw 0 30vw;
