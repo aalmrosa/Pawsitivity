@@ -1,0 +1,23 @@
+.container {
+    background-color: #e4e4e4;
+    box-shadow: 0 2px 8px rgba(20,20,20,0.2);
+    border-radius: 5px;
+    width: 100%;
+} 
+.header {
+    text-transform: capitalize;
+    text-align: center;
+}
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+.tag {
+    background-color: #d9d9d9;
+    padding: 0 2px;
+    margin: 3px 3px;
+    text-align: center;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px rgba(20,20,20,0.2);
+}

@@ -1,0 +1,34 @@
+#post-container {
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.prof-pic-container {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+}
+
+.prof-pic {
+    width: 30px;
+    height: 30px;
+}
+
+.create-comment-container {
+    background-color: white;
+    padding: 0 16px;
+    text-align: right;
+}
+
+.comment-details {
+    display: flex;
+}
+
+.comment-details textarea {
+    width: 100%;
+}
