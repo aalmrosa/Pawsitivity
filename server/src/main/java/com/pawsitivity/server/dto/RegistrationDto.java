@@ -20,8 +20,4 @@ public class RegistrationDto {
     private String password;
     @NotEmpty(message = "Password Confirmation Required")
     private String confirmPassword;
-
-    private boolean passwordsMatch(){
-        return password.equals(confirmPassword);
-    }
 }

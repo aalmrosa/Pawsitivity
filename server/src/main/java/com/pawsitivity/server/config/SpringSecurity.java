@@ -34,7 +34,6 @@ public class SpringSecurity {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.GET, "/api/**").permitAll()
                         .requestMatchers("/api/signup").permitAll()
-//                        .requestMatchers("/register/**", "/login/**").permitAll()
                         .requestMatchers("/", "/index").permitAll()
                         .requestMatchers("/css/**", "/js/**", "images/**").permitAll()
                         .anyRequest().permitAll()
