@@ -76,6 +76,9 @@ form {
     text-decoration: underline;
     font-style: oblique;
 }
+.links > *:visited {
+    color: black;
+}
 
 @media (min-device-width: 1024px) {
     #container {

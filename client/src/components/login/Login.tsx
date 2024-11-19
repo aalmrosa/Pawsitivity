@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import styles from "./Login.module.css"
+import { Link } from "react-router-dom";
 
 interface Props {
 
@@ -49,8 +50,12 @@ const Login: React.FC<Props> = () => {
                 <input id={styles["submit-form"]} type="submit" value="Login"/>
             </form>
             <div className={styles["links"]}>
-                <div>Forgot your password?</div>
-                <div>Don't have an account?</div>
+                <Link to="/">
+                    <div>Forgot your password?</div>
+                </Link>
+                <Link to="/signup">
+                    <div>Don't have an account?</div>
+                </Link>
             </div>
         </div>
     );
