@@ -1,4 +1,8 @@
-package com.pawsitivity.server.model;
+package com.pawsitivity.server.features.user.model;
+
+import java.util.Set;
+
+import com.pawsitivity.server.features.post.model.Post;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -19,6 +23,9 @@ public class User {
     private String username;
     @Column(nullable = false)
     private String password;
+
+    @OneToMany(mappedBy = "creator", cascade = CascadeType.ALL)
+    private Set<Post> posts;
 
     public User(String username, String password) {
         this.username = username;

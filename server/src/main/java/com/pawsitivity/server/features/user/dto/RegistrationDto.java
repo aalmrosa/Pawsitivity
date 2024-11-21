@@ -1,4 +1,4 @@
-package com.pawsitivity.server.dto;
+package com.pawsitivity.server.features.user.dto;
 
 import com.pawsitivity.server.validation.PasswordMatches;
 import jakarta.validation.constraints.NotEmpty;

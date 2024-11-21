@@ -1,10 +1,11 @@
-package com.pawsitivity.server.service.impl;
+package com.pawsitivity.server.features.user.service.impl;
 
-import com.pawsitivity.server.dto.RegistrationDto;
 import com.pawsitivity.server.exception.UserAlreadyExistsException;
-import com.pawsitivity.server.model.User;
-import com.pawsitivity.server.repository.UserRepository;
-import com.pawsitivity.server.service.UserService;
+import com.pawsitivity.server.features.user.dto.RegistrationDto;
+import com.pawsitivity.server.features.user.model.User;
+import com.pawsitivity.server.features.user.repository.UserRepository;
+import com.pawsitivity.server.features.user.service.UserService;
+
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

@@ -1,13 +1,14 @@
 package com.pawsitivity.server.security;
 
-import com.pawsitivity.server.model.User;
-import com.pawsitivity.server.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import com.pawsitivity.server.features.user.model.User;
+import com.pawsitivity.server.features.user.repository.UserRepository;
 
 import java.util.Collections;
 
