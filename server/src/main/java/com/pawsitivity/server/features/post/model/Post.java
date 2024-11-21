@@ -1,10 +1,8 @@
 package com.pawsitivity.server.features.post.model;
 import java.time.LocalDateTime;
-import java.util.Set;
 
 import com.pawsitivity.server.features.user.model.User;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

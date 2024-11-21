@@ -5,7 +5,6 @@ import com.pawsitivity.server.features.user.dto.RegistrationDto;
 import com.pawsitivity.server.features.user.dto.UserDto;
 import com.pawsitivity.server.features.user.service.UserService;
 
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -44,8 +43,8 @@ public class AuthController {
         return new ResponseEntity<>("User registered successfully", HttpStatus.CREATED);
     }
 
-    @PostMapping("/create-post")
-    public ResponseEntity<?> savePost(@RequestBody PostDto postDto) {
+    // @PostMapping("/create-post")
+    // public ResponseEntity<?> savePost(@RequestBody PostDto postDto) {
         
-    }
+    // }
 }
