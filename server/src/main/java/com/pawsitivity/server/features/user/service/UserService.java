@@ -1,7 +1,8 @@
-package com.pawsitivity.server.service;
+package com.pawsitivity.server.features.user.service;
 
-import com.pawsitivity.server.dto.RegistrationDto;
 import com.pawsitivity.server.exception.UserAlreadyExistsException;
+import com.pawsitivity.server.features.user.dto.RegistrationDto;
+
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,8 +1,9 @@
-package com.pawsitivity.server.repository;
+package com.pawsitivity.server.features.user.repository;
 
-import com.pawsitivity.server.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.pawsitivity.server.features.user.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
