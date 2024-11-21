@@ -9,11 +9,6 @@ body {
     src: url('../../Kablammo/Kablammo-Regular-VariableFont_MORF.ttf');
 } */
 
-/* prototyping
-#container, header, form, #submit-form, .links > a {
-    outline: 1px solid black;
-} */
-
 /* mobile */
 #container {
     height: 80vh;
@@ -48,15 +43,15 @@ form {
     display: block;
     background-color: #C3854F;
     border: 1px solid white;
+    color: white;
     width: 100%;
     margin: 0 0 20px 0;
-    padding: 10px 0;
+    padding: 10px 8px;
     font-size: 1.2rem;
     box-shadow: 0 5px 5px rgb(0, 0, 0, 0.25);
 }
 ::placeholder {
     color: white;
-    padding: 8px;
     text-transform: uppercase;
     text-shadow: 0 5px 5px rgb(0, 0, 0, 0.25);
 }
@@ -71,6 +66,12 @@ form {
     font-size: 1.5rem;
     border: 0;
 }
+#submit-form:hover {
+    cursor: pointer;
+}
+#submit-form:active {
+    outline: 1px solid gray;
+}
 .links {
     display: flex;
     flex-direction: column;
@@ -81,7 +82,23 @@ form {
     text-decoration: underline;
     font-style: oblique;
 }
-
+.links > *:visited {
+    color: black;
+}
+.prefix {
+    color: red;
+}
+.msg {
+    padding: 0 0 0 8px;
+}
+#form-errors {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 8px;
+    border-radius: 5px;
+}
 @media (min-device-width: 1024px) {
     #container {
         margin: 5% 30vw 0 30vw;

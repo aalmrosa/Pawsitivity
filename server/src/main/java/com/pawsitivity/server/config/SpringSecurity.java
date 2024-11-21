@@ -15,7 +15,6 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @AllArgsConstructor
 @Configuration
@@ -35,7 +34,6 @@ public class SpringSecurity {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.GET, "/api/**").permitAll()
                         .requestMatchers("/api/signup").permitAll()
-//                        .requestMatchers("/register/**", "/login/**").permitAll()
                         .requestMatchers("/", "/index").permitAll()
                         .requestMatchers("/css/**", "/js/**", "images/**").permitAll()
                         .anyRequest().permitAll()

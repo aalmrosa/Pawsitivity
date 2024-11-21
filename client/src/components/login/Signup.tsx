@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import styles from "./Login.module.css"
+import { Link } from "react-router-dom";
 
 interface Props {
 
@@ -10,6 +11,8 @@ const Signup: React.FC<Props> = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+
+    const [error, setError] = useState('');
 
     const handleSignup = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
         event.preventDefault()
@@ -25,7 +28,8 @@ const Signup: React.FC<Props> = () => {
                 console.log("REGISTERED ACCOUNT");
             }
             else{
-                console.log("UNABLE TO REGISTER")
+                console.log("UNABLE TO REGISTER");
+                setError("1");
             }
         } catch (error){
             console.log("remove error", error);
@@ -40,6 +44,17 @@ const Signup: React.FC<Props> = () => {
                 <div id={styles["header-1"]}>Sign-up To</div>
                 <div id={styles["header-2"]}>Pawsitivity</div>
             </header>
+            {
+            error &&
+                <div id={styles["form-errors"]}>
+                    <span className={`${styles["prefix"]} ${styles["err"]}`}>
+                        WARNING:
+                    </span>
+                    <span className={`${styles["msg"]} ${styles["err"]}`}>
+                        Unable to register.
+                    </span>
+                </div>
+            }
             <form method="post" onSubmit={handleSignup}>
                 <label htmlFor="username"></label>
                 <input id="username" className={styles["text-input"]} type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)}/>
@@ -53,7 +68,9 @@ const Signup: React.FC<Props> = () => {
                 <input id={styles["submit-form"]} type="submit" value="Sign-up"/>
             </form>
             <div className={styles["links"]}>
-                <div>Already have an account?</div>
+                <Link to="/login">
+                    <div>Already have an account?</div>
+                </Link>
             </div>
         </div>
     );
