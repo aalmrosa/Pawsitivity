@@ -1,10 +1,9 @@
-package com.pawsitivity.server.features.user.service.impl;
+package com.pawsitivity.server.service.impl;
 
-import com.pawsitivity.server.exception.UserAlreadyExistsException;
-import com.pawsitivity.server.features.user.dto.RegistrationDto;
-import com.pawsitivity.server.features.user.model.User;
-import com.pawsitivity.server.features.user.repository.UserRepository;
-import com.pawsitivity.server.features.user.service.UserService;
+import com.pawsitivity.server.dto.RegistrationDto;
+import com.pawsitivity.server.model.User;
+import com.pawsitivity.server.repository.UserRepository;
+import com.pawsitivity.server.service.UserService;
 
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,9 +16,9 @@ public class UserServiceImpl implements UserService {
     private PasswordEncoder passwordEncoder;
 
     @Override
-    public void save(RegistrationDto newUser) throws UserAlreadyExistsException {
+    public void save(RegistrationDto newUser) throws Exception {
         if (userRepository.findByUsername(newUser.getUsername()) != null) {
-            throw new UserAlreadyExistsException(newUser.getUsername());
+            throw new Exception("Username already in use.");
         }
 
         User user = new User(
