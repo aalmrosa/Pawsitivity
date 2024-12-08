@@ -29,7 +29,7 @@ public class Comment {
     private Post post;
 
     @Column(nullable = false)
-    private User commenter;
+    private User author;
 
     @Column(nullable = false)
     private LocalDateTime creationTime;
@@ -41,5 +41,5 @@ public class Comment {
     private String content;
 
     @Column(nullable = false)
-    private boolean deleted;
+    private Boolean deleted;
 }
