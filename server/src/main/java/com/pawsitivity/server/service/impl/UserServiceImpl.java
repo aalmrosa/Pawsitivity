@@ -1,7 +1,7 @@
 package com.pawsitivity.server.service.impl;
 
 import com.pawsitivity.server.dto.RegistrationDto;
-import com.pawsitivity.server.model.User;
+import com.pawsitivity.server.model.UserAccount;
 import com.pawsitivity.server.repository.UserRepository;
 import com.pawsitivity.server.service.UserService;
 
@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
             throw new Exception("Username already in use.");
         }
 
-        User user = new User(
+        UserAccount user = new UserAccount(
                 newUser.getUsername(),
                 passwordEncoder.encode(newUser.getPassword())
         );

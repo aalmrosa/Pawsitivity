@@ -1,18 +1,18 @@
 package com.pawsitivity.server;
 
-import com.pawsitivity.server.model.User;
+import com.pawsitivity.server.model.UserAccount;
 
 public class TestDataUtil {
     
-    public static User createTestUserA() {
-        return new User("testUserA", "passwordA");
+    public static UserAccount createTestUserA() {
+        return new UserAccount("testUserA", "passwordA");
     }
 
-    public static User createTestUserB() {
-        return new User("testUserB", "passwordB");
+    public static UserAccount createTestUserB() {
+        return new UserAccount("testUserB", "passwordB");
     }
 
-    public static User createTestUserC() {
-        return new User("testUserC", "passwordC");
+    public static UserAccount createTestUserC() {
+        return new UserAccount("testUserC", "passwordC");
     }
 }
