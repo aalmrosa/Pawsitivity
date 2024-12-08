@@ -6,6 +6,8 @@ import com.pawsitivity.server.features.user.model.User;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,10 +27,19 @@ public class Like {
     private Long id;
     
     @Column(nullable = false)
-    private Post post;
+    private Long contentId;
 
     @Column(nullable = false)
-    private User likedBy;
+    private User author;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private ContentType contentType;
+
+    public enum ContentType {
+        POST,
+        COMMENT
+    }
 
     @Column(nullable = false)
     private LocalDateTime time;
