@@ -12,7 +12,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.pawsitivity.server.TestDataUtil;
-import com.pawsitivity.server.model.UserAccount;
+import com.pawsitivity.server.model.UserAccEntity;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
@@ -28,41 +28,41 @@ public class UserRepositoryIntegrationTests {
 
     @Test
     public void testUserCanBeCreatedAndRetrieved() {
-        UserAccount user = TestDataUtil.createTestUserA();
+        UserAccEntity user = TestDataUtil.createTestUserA();
         underTest.save(user);
-        Optional<UserAccount> result = underTest.findById(user.getId());
+        Optional<UserAccEntity> result = underTest.findById(user.getId());
         assert(result).isPresent();
         assert(user).equals(result.get());
     }
 
     @Test
     public void testMultipleUsersCanBeCreatedAndRetrieved() {
-        List<UserAccount> users = new ArrayList<>();
+        List<UserAccEntity> users = new ArrayList<>();
         users.add(TestDataUtil.createTestUserA());
         users.add(TestDataUtil.createTestUserB());
         users.add(TestDataUtil.createTestUserC());
         users.forEach(user -> underTest.save(user));
-        List<UserAccount> result = underTest.findAll();
+        List<UserAccEntity> result = underTest.findAll();
         assert(users).equals(result);
     }
 
     @Test
     public void testUserCanBeUpdated() {
-        UserAccount user = TestDataUtil.createTestUserA();
+        UserAccEntity user = TestDataUtil.createTestUserA();
         underTest.save(user);
         user.setUsername("UPDATED");
         underTest.save(user);
-        Optional<UserAccount> result = underTest.findById(user.getId());
+        Optional<UserAccEntity> result = underTest.findById(user.getId());
         assert(result).isPresent();
         assert(user).equals(result.get());
     }
 
     @Test
     public void testUserCanBeDeleted() {
-        UserAccount user = TestDataUtil.createTestUserA();
+        UserAccEntity user = TestDataUtil.createTestUserA();
         underTest.save(user);
         underTest.delete(user);
-        Optional<UserAccount> result = underTest.findById(user.getId());
+        Optional<UserAccEntity> result = underTest.findById(user.getId());
         assert(result).isEmpty(); 
     }
 }
