@@ -33,19 +33,12 @@ public class Post {
 
     private LocalDateTime editedTime;
 
-    @Column(nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "creator_id")
     private User creator;
 
     @Column(nullable = false)
     private String content;
-
-    // @OneToMany(targetEntity = Like.class, cascade = CascadeType.ALL)
-    // private Set<Like> likes;
-
-    // @OneToMany(targetEntity = Comment.class, cascade = CascadeType.ALL)
-    // private Set<Comment> comments;
 
     @Column(nullable = false)
     private Integer likeCounter;

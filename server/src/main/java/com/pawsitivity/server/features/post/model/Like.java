@@ -24,8 +24,8 @@ public class Like {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column(nullable = false)
-    private Post post;
+    // @Column(nullable = false)
+    // private Post post;
 
     @Column(nullable = false)
     private User likedBy;
