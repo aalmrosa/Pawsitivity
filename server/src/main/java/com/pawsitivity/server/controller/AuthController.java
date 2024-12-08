@@ -1,9 +1,8 @@
-package com.pawsitivity.server.features.user.controller;
+package com.pawsitivity.server.controller;
 
-import com.pawsitivity.server.exception.UserAlreadyExistsException;
-import com.pawsitivity.server.features.user.dto.RegistrationDto;
-import com.pawsitivity.server.features.user.dto.UserDto;
-import com.pawsitivity.server.features.user.service.UserService;
+import com.pawsitivity.server.dto.RegistrationDto;
+import com.pawsitivity.server.dto.UserDto;
+import com.pawsitivity.server.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -37,14 +36,9 @@ public class AuthController {
     public ResponseEntity<?> registerUser(@RequestBody RegistrationDto registrationDto) {
         try {
             userService.save(registrationDto);
-        } catch (UserAlreadyExistsException e) {
+        } catch (Exception e) {
             return new ResponseEntity<>("Username is taken", HttpStatus.CONFLICT);
         }
         return new ResponseEntity<>("User registered successfully", HttpStatus.CREATED);
     }
-
-    // @PostMapping("/create-post")
-    // public ResponseEntity<?> savePost(@RequestBody PostDto postDto) {
-        
-    // }
 }
