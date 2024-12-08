@@ -1,4 +1,4 @@
-package com.pawsitivity.server.features.user.dto;
+package com.pawsitivity.server.dto;
 
 import lombok.Getter;
 import lombok.Setter;

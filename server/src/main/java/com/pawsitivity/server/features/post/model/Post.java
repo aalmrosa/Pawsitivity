@@ -1,8 +1,6 @@
 package com.pawsitivity.server.features.post.model;
 import java.time.LocalDateTime;
 
-import com.pawsitivity.server.features.user.model.User;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -33,15 +31,16 @@ public class Post {
 
     private LocalDateTime editedTime;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "creator_id")
-    private User creator;
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "creator_id")
+    // private User author;
 
     @Column(nullable = false)
     private String content;
 
     @Column(nullable = false)
     private Integer likeCounter;
+
     @Column(nullable = false)
     private Integer commentCounter;
 

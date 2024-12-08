@@ -2,7 +2,6 @@ package com.pawsitivity.server.features.post.model;
 
 import java.time.LocalDateTime;
 
-import com.pawsitivity.server.features.user.model.User;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -28,8 +27,8 @@ public class Comment {
     // @Column(nullable = false)
     // private Post post;
 
-    @Column(nullable = false)
-    private User commenter;
+    // @Column(nullable = false)
+    // private User author;
 
     @Column(nullable = false)
     private LocalDateTime creationTime;
@@ -41,5 +40,5 @@ public class Comment {
     private String content;
 
     @Column(nullable = false)
-    private boolean deleted;
+    private Boolean deleted;
 }
