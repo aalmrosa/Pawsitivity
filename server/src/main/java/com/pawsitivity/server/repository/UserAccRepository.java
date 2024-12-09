@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.pawsitivity.server.model.UserAccEntity;
 
-public interface UserAccountRepository extends JpaRepository<UserAccEntity, Long> {
+public interface UserAccRepository extends JpaRepository<UserAccEntity, Long> {
 
     
 

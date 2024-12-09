@@ -2,7 +2,7 @@ package com.pawsitivity.server.dto;
 
 import java.sql.Timestamp;
 
-public class UserAccountDto {
+public class UserAccDto {
 
     private String username;
     

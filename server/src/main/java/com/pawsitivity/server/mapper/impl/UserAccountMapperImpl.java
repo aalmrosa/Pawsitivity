@@ -3,12 +3,12 @@ package com.pawsitivity.server.mapper.impl;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
-import com.pawsitivity.server.dto.UserAccountDto;
+import com.pawsitivity.server.dto.UserAccDto;
 import com.pawsitivity.server.mapper.Mapper;
 import com.pawsitivity.server.model.UserAccEntity;
 
 @Component
-public class UserAccountMapperImpl implements Mapper<UserAccEntity, UserAccountDto> {
+public class UserAccountMapperImpl implements Mapper<UserAccEntity, UserAccDto> {
 
     private ModelMapper modelMapper;
 
@@ -17,13 +17,13 @@ public class UserAccountMapperImpl implements Mapper<UserAccEntity, UserAccountD
     }
 
     @Override
-    public UserAccEntity mapToEntity(UserAccountDto userAccountDto) {
+    public UserAccEntity mapToEntity(UserAccDto userAccountDto) {
         return modelMapper.map(userAccountDto, UserAccEntity.class);
     }
 
     @Override
-    public UserAccountDto mapToDto(UserAccEntity userAccountModel) {
-        return modelMapper.map(userAccountModel, UserAccountDto.class);
+    public UserAccDto mapToDto(UserAccEntity userAccountModel) {
+        return modelMapper.map(userAccountModel, UserAccDto.class);
     }
 
 }
