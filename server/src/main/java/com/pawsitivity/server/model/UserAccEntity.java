@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name="user_accounts")
-public class UserAccount {
+public class UserAccEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,13 +33,13 @@ public class UserAccount {
 
     private Boolean deactivated;
 
-    public UserAccount(String username, String password) {
+    public UserAccEntity(String username, String password) {
         this.username = username;
         this.password = password;
         setDefaults(this);
     }
 
-    private static void setDefaults(UserAccount userAccount) {
+    private static void setDefaults(UserAccEntity userAccount) {
         userAccount.setDeactivated(false);
     }
 }
