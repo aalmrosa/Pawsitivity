@@ -1,6 +1,8 @@
 package com.pawsitivity.server.features.post.model;
 import java.time.LocalDateTime;
 
+import com.pawsitivity.server.model.UserAccEntity;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -11,6 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,28 +29,28 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    // @Column(nullable = false)
     private LocalDateTime creationTime;
 
     private LocalDateTime editedTime;
 
     // @ManyToOne(fetch = FetchType.LAZY)
     // @JoinColumn(name = "creator_id")
-    // private User author;
+    // private UserAccEntity author;
 
     @Column(nullable = false)
     private String content;
 
-    @Column(nullable = false)
+    // @Column(nullable = false)
     private Integer likeCounter;
 
-    @Column(nullable = false)
+    // @Column(nullable = false)
     private Integer commentCounter;
 
-    @Column(nullable = false)
+    // @Column(nullable = false)
     private Boolean deleted;
 
-    @Column(nullable = false)
+    // @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Visibility visibility;
 
@@ -56,4 +59,12 @@ public class Post {
         FRIENDS_ONLY,
         PRIVATE
     }
+
+    @PrePersist
+    public void prePersist(){
+        if(this.creationTime == null){
+            this.creationTime = LocalDateTime.now();
+        }
+    }
+
 }
