@@ -8,11 +8,11 @@ import com.pawsitivity.server.mapper.Mapper;
 import com.pawsitivity.server.model.UserAccEntity;
 
 @Component
-public class UserAccountMapperImpl implements Mapper<UserAccEntity, UserAccDto> {
+public class UserAccMapperImpl implements Mapper<UserAccEntity, UserAccDto> {
 
     private ModelMapper modelMapper;
 
-    public UserAccountMapperImpl(ModelMapper modelMapper) {
+    public UserAccMapperImpl(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;
     }
 
