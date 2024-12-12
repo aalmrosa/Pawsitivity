@@ -11,6 +11,7 @@ import lombok.*;
 @Getter
 @Setter
 @Entity
+@Data
 @Table
 public class Post {
     @Id
@@ -20,7 +21,7 @@ public class Post {
     // @Column(nullable = false)
     private LocalDateTime creationTime;
 
-    private LocalDateTime editedTime;
+    private LocalDateTime lastEditedTime;
 
     // @ManyToOne(fetch = FetchType.LAZY)
     // @JoinColumn(name = "creator_id")
@@ -56,6 +57,9 @@ public class Post {
     public void prePersist(){
         if(this.creationTime == null){
             this.creationTime = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS);
+        }
+        if(this.lastEditedTime == null){
+            this.lastEditedTime = creationTime;
         }
         if(this.likeCounter == null){
             this.likeCounter = 0;

@@ -1,6 +1,7 @@
 package com.pawsitivity.server;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 
 import com.pawsitivity.server.features.post.model.Post;
@@ -24,8 +25,8 @@ public class TestDataUtil {
 
     public static PostDto createTestPostA(){
         return new PostDto(
-            LocalDateTime.now(), 
-            LocalDateTime.now(), 
+            LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS), 
+            LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS), 
             "CUPCAKE", 
             0, 
             0, 
