@@ -1,6 +1,7 @@
 package com.pawsitivity.server.model;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -26,20 +27,29 @@ public class UserAccEntity {
     private String password;
 
     @Column(name="time_of_creation")
-    private Timestamp timeOfCreation;
+    private LocalDateTime timeOfCreation;
 
     @Column(name="last_edit")
-    private Timestamp lastEdit;
+    private LocalDateTime lastEdit;
 
     private Boolean deactivated;
 
-    public UserAccEntity(String username, String password) {
+    public UserAccEntity(String username, String email, String password) {
         this.username = username;
+        this.email = email;
         this.password = password;
-        setDefaults(this);
     }
 
-    private static void setDefaults(UserAccEntity userAccount) {
-        userAccount.setDeactivated(false);
+    @PrePersist
+    public void prePersist() {
+        if (this.deactivated == null) {
+            this.deactivated = false;
+        }
+        if (this.lastEdit == null) {
+            this.lastEdit = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS);
+        }
+        if (this.timeOfCreation == null) {
+            this.timeOfCreation = this.lastEdit;
+        }
     }
 }

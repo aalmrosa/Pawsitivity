@@ -1,8 +1,17 @@
 package com.pawsitivity.server.dto;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class UserAccDto {
+
+    private Long id;
 
     private String username;
     
@@ -10,10 +19,15 @@ public class UserAccDto {
     
     private String password;
     
-    private Timestamp timeOfCreation;
+    private LocalDateTime timeOfCreation;
     
-    private Timestamp lastEdit;
+    private LocalDateTime lastEdit;
     
     private Boolean deactivated;
 
+    public UserAccDto(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
 }

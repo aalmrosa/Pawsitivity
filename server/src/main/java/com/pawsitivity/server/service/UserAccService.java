@@ -8,5 +8,17 @@ import com.pawsitivity.server.model.UserAccEntity;
 
 @Component
 public interface UserAccService {
-        void createUserAccount(UserAccDto userAccountDto);
+        
+        void create(UserAccDto user) throws Exception;
+        void create(UserAccEntity user) throws Exception;
+        UserAccEntity get(Long id) throws Exception;
+        UserAccEntity get(String username) throws Exception;
+        
+        void edit(UserAccEntity user);
+        void changeUsername(Long id, String username) throws Exception;
+        void changeEmail(Long id, String email) throws Exception;
+        void changePassword(Long id, String password);
+        void deactivate(Long id);
+        void activate(Long id);
+
 }
