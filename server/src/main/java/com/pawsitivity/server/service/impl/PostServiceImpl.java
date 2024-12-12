@@ -44,4 +44,5 @@ public class PostServiceImpl implements PostService{
         post.setLikeCounter(post.getLikeCounter()+1);
         postRepository.save(post);
     }
+
 }

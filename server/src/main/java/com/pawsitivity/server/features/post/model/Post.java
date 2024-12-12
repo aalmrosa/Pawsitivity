@@ -1,23 +1,11 @@
 package com.pawsitivity.server.features.post.model;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
-import com.pawsitivity.server.model.UserAccEntity;
+import com.pawsitivity.server.dto.Visibility;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 @NoArgsConstructor
 @Getter
@@ -54,16 +42,26 @@ public class Post {
     @Enumerated(EnumType.STRING)
     private Visibility visibility;
 
-    public enum Visibility {
-        PUBLIC,
-        FRIENDS_ONLY,
-        PRIVATE
+
+    public Post(LocalDateTime creationTime, String content, Integer likeCounter, Integer commentCounter, Boolean deleted, Visibility visibility){
+        this.creationTime = creationTime;
+        this.content = content;
+        this.likeCounter = likeCounter;
+        this.commentCounter = commentCounter;
+        this.deleted = deleted;
+        this.visibility = visibility;
     }
 
     @PrePersist
     public void prePersist(){
         if(this.creationTime == null){
-            this.creationTime = LocalDateTime.now();
+            this.creationTime = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS);
+        }
+        if(this.likeCounter == null){
+            this.likeCounter = 0;
+        }
+        if(this.commentCounter == null){
+            this.commentCounter = 0;
         }
     }
 
