@@ -6,6 +6,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.pawsitivity.server.dto.UserAccDto;
+import com.pawsitivity.server.exceptions.user.UserAccountParameterException;
+import com.pawsitivity.server.exceptions.user.UserNotFoundException;
 import com.pawsitivity.server.mapper.impl.UserAccMapperImpl;
 import com.pawsitivity.server.model.UserAccEntity;
 import com.pawsitivity.server.repository.UserAccRepository;
@@ -33,9 +35,9 @@ public class UserAccServiceImpl implements UserAccService {
     }
 
     @Override
-    public void changeEmail(Long id, String email) throws Exception {
+    public void changeEmail(Long id, String email) throws UserAccountParameterException {
         if (userAccRepository.findByEmail(email).isPresent()) {
-            throw new Exception("Email already in use.");
+            throw new UserAccountParameterException("Email", email);
         }
         try {
             UserAccEntity user = get(id);
@@ -58,9 +60,9 @@ public class UserAccServiceImpl implements UserAccService {
     }
 
     @Override
-    public void changeUsername(Long id, String username) throws Exception {
+    public void changeUsername(Long id, String username) throws UserAccountParameterException {
         if (userAccRepository.findByUsername(username).isPresent()) {
-            throw new Exception("Username already in use.");
+            throw new UserAccountParameterException("Username", username);
         }
         try {
             UserAccEntity user = get(id);
@@ -72,24 +74,24 @@ public class UserAccServiceImpl implements UserAccService {
     }
     
     @Override
-    public void create(UserAccEntity user) throws Exception {
+    public void create(UserAccEntity user) throws UserAccountParameterException {
         if (userAccRepository.findByUsername(user.getUsername()).isPresent()) {
-            throw new Exception("Username \"" + user.getUsername() + "\" already in use.");
+            throw new UserAccountParameterException("Username", user.getUsername());
         }
         if (userAccRepository.findByEmail(user.getEmail()).isPresent()) {
-            throw new Exception("Email \"" + user.getEmail() + "\" already in use.");
+            throw new UserAccountParameterException("Email", user.getEmail());
         }
         user.setPassword(encoder.encode(user.getPassword()));
         userAccRepository.save(user);
     }
 
     @Override
-    public void create(UserAccDto user) throws Exception {
+    public void create(UserAccDto user) throws UserAccountParameterException {
         if (userAccRepository.findByUsername(user.getUsername()).isPresent()) {
-            throw new Exception("Username \""+ user.getUsername() +"\" already in use.");
+            throw new UserAccountParameterException("Username", user.getUsername());
         }
         if (userAccRepository.findByEmail(user.getEmail()).isPresent()) {
-            throw new Exception("Email \"" + user.getEmail() + "\" already in use.");
+            throw new UserAccountParameterException("Email", user.getEmail());
         }
         UserAccEntity entity = userAccMapperImpl.mapToEntity(user);
         entity.setPassword(encoder.encode(user.getPassword()));
@@ -108,17 +110,17 @@ public class UserAccServiceImpl implements UserAccService {
     }
 
     @Override
-    public UserAccEntity get(Long id) throws Exception {
+    public UserAccEntity get(Long id) throws UserNotFoundException {
         Optional<UserAccEntity> user = userAccRepository.findById(id);
         if (user.isPresent()) {
             return user.get();
         }
-        throw new Exception("User with id \"" + id + "\" not found.");
+        throw new UserNotFoundException(id);
     }
     
     // input can also be an email
     @Override 
-    public UserAccEntity get(String username) throws Exception {
+    public UserAccEntity get(String username) throws UserNotFoundException {
         Optional<UserAccEntity> user = userAccRepository.findByUsername(username); 
         if (user.isEmpty()) {
             user = userAccRepository.findByEmail(username);
@@ -126,7 +128,7 @@ public class UserAccServiceImpl implements UserAccService {
         if (user.isPresent()) {
             return user.get();
         }
-        throw new Exception("User \"" + username + "\" not found.");
+        throw new UserNotFoundException(username);
     }
 
     @Override
