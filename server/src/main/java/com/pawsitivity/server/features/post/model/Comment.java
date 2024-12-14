@@ -30,15 +30,15 @@ public class Comment {
     // @Column(nullable = false)
     // private User author;
 
-    @Column(nullable = false)
+    // @Column(nullable = false)
     private LocalDateTime creationTime;
 
-    @Column(nullable = false)
-    private LocalDateTime editedTime;
+    // @Column(nullable = false)
+    private LocalDateTime lastEditedTime;
 
-    @Column(nullable = false)
+    // @Column(nullable = false)
     private String content;
 
-    @Column(nullable = false)
+    // @Column(nullable = false)
     private Boolean deleted;
 }

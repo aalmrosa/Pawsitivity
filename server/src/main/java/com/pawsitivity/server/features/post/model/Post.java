@@ -18,7 +18,7 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // @Column(nullable = false)
+    @Column(nullable = false)
     private LocalDateTime creationTime;
 
     private LocalDateTime lastEditedTime;
@@ -30,16 +30,16 @@ public class Post {
     @Column(nullable = false)
     private String content;
 
-    // @Column(nullable = false)
+    @Column(nullable = false)
     private Integer likeCounter;
 
-    // @Column(nullable = false)
+    @Column(nullable = false)
     private Integer commentCounter;
 
-    // @Column(nullable = false)
+    @Column(nullable = false)
     private Boolean deleted;
 
-    // @Column(nullable = false)
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Visibility visibility;
 
@@ -66,6 +66,9 @@ public class Post {
         }
         if(this.commentCounter == null){
             this.commentCounter = 0;
+        }
+        if(this.deleted == null){
+            this.deleted = false;
         }
     }
 

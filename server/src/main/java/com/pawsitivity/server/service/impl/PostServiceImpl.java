@@ -1,10 +1,7 @@
 package com.pawsitivity.server.service.impl;
-
-import java.util.NoSuchElementException;
-
 import org.springframework.stereotype.Service;
-
 import com.pawsitivity.server.dto.PostDto;
+import com.pawsitivity.server.dto.Visibility;
 import com.pawsitivity.server.features.post.model.Post;
 import com.pawsitivity.server.mapper.Mapper;
 import com.pawsitivity.server.repository.PostRepository;
@@ -39,9 +36,24 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
+    public PostDto changeVisibility(Long id, Visibility visibility){
+        Post post = postRepository.findById(id).get();
+        post.setVisibility(visibility);
+        postRepository.save(post);
+        return mapper.mapToDto(post);
+    }
+
+    @Override
     public void incrementLike(Long id) {
         Post post = postRepository.findById(id).get();
         post.setLikeCounter(post.getLikeCounter()+1);
+        postRepository.save(post);
+    }
+
+    @Override
+    public void unlike(Long id) {
+        Post post = postRepository.findById(id).get();
+        post.setLikeCounter(post.getLikeCounter()-1);
         postRepository.save(post);
     }
 
