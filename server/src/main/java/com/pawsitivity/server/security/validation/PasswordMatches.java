@@ -1,4 +1,4 @@
-package com.pawsitivity.server.validation;
+package com.pawsitivity.server.security.validation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;

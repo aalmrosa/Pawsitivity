@@ -1,8 +1,8 @@
 package com.pawsitivity.server.controller;
 
-import com.pawsitivity.server.dto.RegistrationDto;
-import com.pawsitivity.server.dto.UserDto;
-import com.pawsitivity.server.service.UserService;
+import com.pawsitivity.server.dto.UserAccDto;
+import com.pawsitivity.server.exceptions.user.UserAccountParameterException;
+import com.pawsitivity.server.service.UserAccService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,28 +17,37 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api")
 public class AuthController {
+
     private AuthenticationManager authenticationManager;
-    private UserService userService;
+    private UserAccService userAccService;
+    
     @Autowired
-    public AuthController(AuthenticationManager authenticationManager, UserService userService) {
+    public AuthController(AuthenticationManager authenticationManager, UserAccService userAccService) {
         this.authenticationManager = authenticationManager;
-        this.userService = userService;
+        this.userAccService = userAccService;
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody UserDto userDto) {
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userDto.getUsername(), userDto.getPassword()));
+    public ResponseEntity<String> login(@RequestBody UserAccDto request) {
+        Authentication authentication = authenticationManager.authenticate(
+            new UsernamePasswordAuthenticationToken(
+                request.getUsername(), request.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        return new ResponseEntity<>("User logged in successfully", HttpStatus.OK);
+        if (authentication.isAuthenticated()) {
+            return new ResponseEntity<>("User logged in successfully", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("User could not be logged in", HttpStatus.BAD_REQUEST);
+        }
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<?> registerUser(@RequestBody RegistrationDto registrationDto) {
+    public ResponseEntity<?> registerUser(@RequestBody UserAccDto request) {
         try {
-            userService.save(registrationDto);
-        } catch (Exception e) {
-            return new ResponseEntity<>("Username is taken", HttpStatus.CONFLICT);
+            userAccService.create(request);
+        } catch (UserAccountParameterException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
         }
         return new ResponseEntity<>("User registered successfully", HttpStatus.CREATED);
     }
+    
 }

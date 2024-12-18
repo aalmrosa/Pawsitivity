@@ -23,7 +23,9 @@ public class UserAccDto {
     
     private LocalDateTime lastEdit;
     
-    private Boolean deactivated;
+    private Boolean deactivated = false;
+
+    private Boolean enabled = false;
 
     public UserAccDto(String username, String email, String password) {
         this.username = username;
