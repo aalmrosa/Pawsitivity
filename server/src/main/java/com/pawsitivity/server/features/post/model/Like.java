@@ -10,21 +10,21 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity
-@Table
+//@Entity
+//@Table
 public class Like {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     // @Column(nullable = false)
-    // private Post post;
+     private Post post;
 
     // @Column(nullable = false)
     // private User author;
 
-    @Column(nullable = false)
-    @Enumerated(EnumType.STRING)
+//    @Column(nullable = false)
+//    @Enumerated(EnumType.STRING)
     private ContentType contentType;
 
     public enum ContentType {
@@ -32,6 +32,6 @@ public class Like {
         COMMENT
     }
 
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private LocalDateTime time;
 }

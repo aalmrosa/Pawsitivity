@@ -1,0 +1,15 @@
+spring:
+    config:
+        import: optional:file:.env[.properties]
+    application:
+        name: ${APP_NAME:server}
+    datasource:
+        url: ${DB_URL:jdbc:mysql://localhost:3306/server}?createDatabaseIfNotExist=true
+        username: ${DB_USER:root}
+        password: ${DB_PASS:root}
+    jpa:
+        hibernate:
+            ddl-auto: update
+        open-in-view: true
+    devtools:
+        add-properties: false

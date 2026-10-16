@@ -1,0 +1,11 @@
+services:
+    db:
+        image: ${DB_MS}:latest
+        container_name: ${DB_CONTAINER}
+        ports:
+          - ${DB_PORT}:${DB_PORT}
+        environment:
+          MYSQL_ROOT_PASSWORD: ${DB_PASS}
+          MYSQL_DATABASE: ${DB_NAME}
+        volumes:
+          - ${DB_ROOT}
