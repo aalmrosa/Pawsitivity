@@ -8,18 +8,18 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.pawsitivity.server.model.UserAccEntity;
-import com.pawsitivity.server.repository.UserRepository;
+import com.pawsitivity.server.repository.UserAccRepository;
 
 import java.util.Collections;
 
 @AllArgsConstructor
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
-    private UserRepository userRepository;
+    private UserAccRepository userAccRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserAccEntity user = userRepository.findByUsername(username).get();
+        UserAccEntity user = userAccRepository.findByUsername(username).get();
         if (user == null) {
             throw new UsernameNotFoundException(username);
         }
