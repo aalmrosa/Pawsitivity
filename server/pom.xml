@@ -18,7 +18,18 @@
         <license/>
     </licenses>
     <developers>
-        <developer/>
+        <developer>
+            <id>aalmrosa</id>
+            <name>Augusto Rosa</name>
+            <email>augustoalmrosa@gmail.com</email>
+            <url>https://github.com/aalmrosa</url>
+            <organization>Pawsitivity</organization>
+            <organizationUrl>https://github.com/aalmrosa/Pawsitivity</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>America/New_York</timezone>
+        </developer>
     </developers>
     <scm>
         <connection/>
