@@ -1,10 +1,12 @@
 package com.pawsitivity.server.service;
 
-import com.pawsitivity.server.dto.RegistrationDto;
-
+import com.pawsitivity.server.model.entity.User;
 import org.springframework.stereotype.Component;
+
+import java.util.Optional;
 
 @Component
 public interface UserService {
-    void save(RegistrationDto user) throws Exception;
+    Optional<User> find(String value);
+    void register(User user);
 }

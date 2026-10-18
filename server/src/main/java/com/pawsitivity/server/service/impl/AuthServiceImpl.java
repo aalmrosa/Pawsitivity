@@ -7,7 +7,7 @@ import com.pawsitivity.server.model.request.RegistrationRequest;
 import com.pawsitivity.server.model.response.AuthenticationResponse;
 import com.pawsitivity.server.model.response.RegistrationResponse;
 import com.pawsitivity.server.service.AuthService;
-import com.pawsitivity.server.service.UserServiceV2;
+import com.pawsitivity.server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -29,7 +29,7 @@ public class AuthServiceImpl implements AuthService {
     private PasswordEncoder passwordEncoder;
 
     @Autowired
-    private UserServiceV2 userService;
+    private UserService userService;
 
     @Override
     public RegistrationResponse register(RegistrationRequest request) throws

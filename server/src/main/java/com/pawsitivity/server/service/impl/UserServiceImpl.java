@@ -1,31 +1,34 @@
 package com.pawsitivity.server.service.impl;
 
-import com.pawsitivity.server.dto.RegistrationDto;
-import com.pawsitivity.server.model.UserAccEntity;
-import com.pawsitivity.server.repository.UserAccRepository;
+import com.pawsitivity.server.model.entity.User;
+import com.pawsitivity.server.repository.UserRepository;
 import com.pawsitivity.server.service.UserService;
 
 import lombok.AllArgsConstructor;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @AllArgsConstructor
 @Service
 public class UserServiceImpl implements UserService {
-    private UserAccRepository userAccRepository;
-    private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Override
-    public void save(RegistrationDto newUser) throws Exception {
-        if (userAccRepository.findByUsername(newUser.getUsername()) != null) {
-            throw new Exception("Username already in use.");
+    public Optional<User> find(String field) {
+        return userRepository.findByEmail(field)
+                .or(() -> userRepository.findById(Long.parseLong(field)));
+    }
+
+    @Override
+    public void register(User user) {
+        if (userRepository.findByEmail(user.getUsername()).isPresent()) {
+            throw new DuplicateKeyException("Email already in use.");
         }
-
-        UserAccEntity user = new UserAccEntity(
-                newUser.getUsername(),
-                passwordEncoder.encode(newUser.getPassword())
-        );
-
-        userAccRepository.save(user);
+        userRepository.save(user);
     }
 }
