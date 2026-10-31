@@ -47,7 +47,6 @@ public class AuthServiceImpl implements AuthService {
                 passwordEncoder.encode(request.password())
         ).build();
         userService.register(user);
-        System.out.println("Finished at " + this.getClass());
         return new RegistrationResponse(
                 String.valueOf(user.getId()),
                 user.getUsername(),
