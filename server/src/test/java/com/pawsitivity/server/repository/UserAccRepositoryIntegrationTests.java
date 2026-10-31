@@ -17,12 +17,12 @@ import com.pawsitivity.server.model.UserAccEntity;
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-public class UserRepositoryIntegrationTests {
+public class UserAccRepositoryIntegrationTests {
     
-    private UserRepository underTest;
+    private UserAccRepository underTest;
 
     @Autowired
-    public UserRepositoryIntegrationTests(UserRepository underTest) {
+    public UserAccRepositoryIntegrationTests(UserAccRepository underTest) {
         this.underTest = underTest;
     }
 
